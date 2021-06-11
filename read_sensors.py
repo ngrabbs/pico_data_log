@@ -13,3 +13,11 @@ def read_sensors(sensor_data):
            if(sensor_data[sensor]['sensors']['pressure']['read'] == True):
                 sensor_data[sensor]['sensors']['pressure']['value'] = sensor_data[sensor]['device'].pressure
     return sensor_data
+
+###### BETTTER WAY JUST NOT WORKING YET #######
+#def read_sensors(sensor_data):
+#    for sensor, v in sensor_data.items():
+#        for sub_sensor, v in sensor_data[sensor]['sensors'].items():
+#            if(sensor_data[sensor]['sensors'][sub_sensor]['read'] == True):
+#                sensor_data[sensor]['sensors'][sub_sensor]['value'] = sensor_data[sensor]['device'].sub_sensor
+#    return sensor_data
