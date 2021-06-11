@@ -1,118 +1,53 @@
+import adafruit_lsm9ds1
+import adafruit_bmp3xx
 sensor_data = {
     'lsm9ds1': {
+        'addresses': ['0x6b'],
+        'setup_string': adafruit_lsm9ds1.LSM9DS1_I2C,
         'device': '',
-        'acceleration': {
-            'read': True,
-            'accel_x': {
+        'sensors': {
+            'acceleration': 
+            {
+                'name': 'acceleration',
+                'read': True,
                 'value': 0,
-                'source': 'blah',
-                'is_active': True,
                 'zero_start': True,
                 'smoothing': 0,
                 'log_on': True,
                 'log_format': '0.4f',
-                'log_name': 'accel_x',
+                'log_name': 'accel_x,accel_y,accel_z',
                 'log_unit': 'm/s'
             },
-            'accel_y': {
+            'magnetic': 
+            {
+                'name': 'magnetic',
+                'read': True,
                 'value': 0,
-                'source': 'blah',
-                'is_active': False,
-                'zero_start': False,
-                'smoothing': 0,
-                'log_on': True,
-                'log_format': '0.4f',
-                'log_name': 'accel_y',
-                'log_unit': 'm/s'
-        
-            },
-            'accel_z': {
-                'value': 0,
-                'source': 'blah',
-                'is_active': False,
-                'zero_start': False,
-                'smoothing': 0,
-                'log_on': True,
-                'log_format': '0.4f',
-                'log_name': 'accel_z',
-                'log_unit': 'm/s'
-        
-            }
-        },
-        'magnetic': {
-            'read': True,
-            'mag_x': {
-                'source': 'blah',
-                'is_active': True,
                 'zero_start': True,
                 'smoothing': 0,
                 'log_on': True,
                 'log_format': '0.4f',
-                'log_name': 'mag_x',
+                'log_name': 'mag_x,mag_y,mag_z',
                 'log_unit': 'm/s'
             },
-            'mag_y': {
-                'source': 'blah',
-                'is_active': False,
-                'zero_start': False,
-                'smoothing': 0,
-                'log_on': True,
-                'log_format': '0.4f',
-                'log_name': 'mag_y',
-                'log_unit': 'm/s'
-            },
-            'mag_z': {
-                'source': 'blah',
-                'is_active': False,
-                'zero_start': False,
-                'smoothing': 0,
-                'log_on': True,
-                'log_format': '0.4f',
-                'log_name': 'mag_z',
-                'log_unit': 'm/s'
-            }
-        },
-        'gyro': {
-            'read': True,
-            'gyro_x': {
-                'source': 'blah',
-                'is_active': True,
+            'gyro': 
+            {
+                'name': 'gyro',
+                'read': True,
+                'value': 0,
                 'zero_start': True,
                 'smoothing': 0,
                 'log_on': True,
                 'log_format': '0.4f',
-                'log_name': 'gyro_x',
-                'log_unit': 'm/s'
-        
-            },
-            'gyro_y': {
-                'source': 'blah',
-                'is_active': False,
-                'zero_start': False,
-                'smoothing': 0,
-                'log_on': True,
-                'log_format': '0.4f',
-                'log_name': 'gyro_y',
-                'log_unit': 'm/s'
-            },
-            'gyro_z': {
-                'source': 'blah',
-                'is_active': False,
-                'zero_start': False,
-                'smoothing': 0,
-                'log_on': True,
-                'log_format': '0.4f',
-                'log_name': 'gyro_z',
+                'log_name': 'gyro_x,gyro_y,gyro_z',
                 'log_unit': 'm/s'
             }
-        },
-        'temperature': {
-            'read': False
         }
+    },
+    'bmp3xx': {
+        'addresses': ['0x00'],
+        'setup_string': adafruit_bmp3xx.BMP3XX_I2C,
+        'device': '',
+        'sensors':{}
     }
 }
-
-#print(sensor_data);
-
-#for k, v in sensor_data.items():
-#    print(k)
