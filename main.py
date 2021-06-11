@@ -19,7 +19,7 @@ write_log = True
 logger_type = 'csv' #mega or csv
 log_name = 'datalog.' + logger_type
 logger_profile = init_logger(logger_type, sensor_data)
-log_time = 1 # in seconds
+log_time = 10 # in seconds
 
 main_start = time.monotonic()
 run_time = 0
