@@ -25,16 +25,16 @@ log_name = 'datalog.' + logger_type
 
 logger_profile = init_logger(logger_type, sensor_data)
 
-cycles = 100
+log_time = 10 # in seconds
 
 i = 0
 main_start = time.monotonic()
-while i < cycles:
+run_time = 0
+while run_time < log_time:
     start_read = time.monotonic()
     data = read_sensors(sensor_data)
     run_time = time.monotonic() - main_start
     read_time = time.monotonic() - start_read
-
     logger(logger_profile, data, run_time, read_time)
     i += 1
 

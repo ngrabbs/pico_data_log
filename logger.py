@@ -1,9 +1,7 @@
 def init_logger(logger_type, data):
     logger_profile = []
-    log_header = ''
+    log_header = 'run_time,read_time,'
     # what sesnors are we logging?
-
-    log_header += "run_time,read_time,"
     for k, v in data.items():
         for kk, vv in data[k].items():
             if(kk != 'device' and data[k][kk]['read'] == True):
@@ -11,7 +9,6 @@ def init_logger(logger_type, data):
                     if(kkk != 'read' and data[k][kk][kkk]['log_on'] == True):
                         logger_profile.append((k,kk,kkk))
                         log_header += kkk + ","
-#    print(logger_profile)
     print(log_header.strip(","))
 
 
