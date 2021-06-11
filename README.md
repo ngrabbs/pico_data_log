@@ -1,4 +1,2 @@
 # pico_data_log
-pico data log
-
-test something
+This is a logger im setting up to log telemtry data from model rocket flights with
