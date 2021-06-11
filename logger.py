@@ -10,17 +10,14 @@ def init_logger(logger_type, data):
                         logger_profile.append((k,kk,kkk))
                         log_header += kkk + ","
     print(log_header.strip(","))
-
-
-
     return logger_profile
 
 def logger(logger_profile, data, start_read, end_read):
     log = ''
     i = 0
     log += ("{0:0.4f},{1:0.4f},").format(start_read, end_read)
-    for blah in logger_profile:
-        log += ("{0:" + data[blah[0]][blah[1]][blah[2]]['log_format'] + "},").format(data[blah[0]][blah[1]][blah[2]]['value'])
+    for x in logger_profile:
+        log += ("{0:" + data[x[0]][x[1]][x[2]]['log_format'] + "},").format(data[x[0]][x[1]][x[2]]['value'])
 
     print(log.strip(","))
 
