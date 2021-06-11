@@ -8,6 +8,7 @@ import board
 import busio
 import digitalio
 import adafruit_lsm9ds1
+import adafruit_bmp3xx
 from read_sensors import read_sensors
 from sensor_data import sensor_data
 from logger import logger, init_logger
@@ -15,9 +16,13 @@ from logger import logger, init_logger
 #led = digitalio.DigitalInOut(board.GP25)
 #led.switch_to_output()
 
-# Create sensor object, communicating over the board's default I2C bus
-i2c = busio.I2C(scl=board.GP5, sda=board.GP4)  # uses board.SCL and board.SDA
-sensor_data['lsm9ds1']['device'] = adafruit_lsm9ds1.LSM9DS1_I2C(i2c)
+# create lsm9ds1 sensor object
+i2c0 = busio.I2C(scl=board.GP5, sda=board.GP4)
+sensor_data['lsm9ds1']['device'] = adafruit_lsm9ds1.LSM9DS1_I2C(i2c0)
+
+# create bmp3xx sensor object
+#i2c1 = busio.I2C(scl=board.GP3, sda=board.GP2)
+#sensor_data['bmp3xx']['device'] = adafruit_bmp3xx.xxxxxx(i2c1)
 
 write_log = True
 logger_type = 'csv' #mega or csv

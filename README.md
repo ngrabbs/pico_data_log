@@ -12,3 +12,4 @@ I'm running a pico with a LSM9DS1 9-DOF and a BMP388 temp+pressure from adafruit
 1. enable logging to a file
 2. clean up sensor data to make it easier to choose which sensor to read and which sensor to log
 3. clean up logger multi dimensional madness
+4. sensor init loop that sets up the sensor devices based on information from the sensor_data config file
